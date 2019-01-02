@@ -19,7 +19,7 @@ bot.on('ready', () => {
 
     })
 
-bot.login("NTI5MDk2OTY0NzcyNDYyNjAy.Dwr35A.m3My4O1lm0E75wFXp8jCS2Tt5kw")
+  bot.login(process.env.TOKEN);
 
 
 bot.on('guildMemberAdd', member => {
