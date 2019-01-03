@@ -20,10 +20,10 @@ function trois(message,prefix,bot){
 
         var bruh_embed = new Discord.RichEmbed()
 
-        .setTitle("Jeu des 3 lettres")
+        .setTitle("●▬▬▬▬๑۩★۩๑▬▬▬▬● Jᴇᴜ ᴅᴇs 3 ʟᴇᴛᴛʀᴇs ●▬▬▬▬๑۩★۩๑▬▬▬▬●")
         .addField("Qu'est ce que le jeu des 3 lettres ?","C'est un jeu qui vous tire aléatoirement 3 lettres, avec ces lettres vous devez faire une sorte phrase, par exemple :\nLettres aléatoire : A F G --> Armée de Frondeurs Gays")
         .addField("Lettres : ",` ${lettre_aleatoire}\n${lettre_aleatoire1}\n${lettre_aleatoire2} `)
-        .setFooter("Codé et idée par ▼𝓐𝓵𝒆𝔁_▲")
+        .setFooter("★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
 
         message.channel.send({embed: bruh_embed});
     }
