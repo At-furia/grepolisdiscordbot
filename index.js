@@ -26,10 +26,15 @@ bot.on('guildMemberAdd', member => {
 
     member.guild.channels.find(channels => channels.id === "529076349374169098");
 
-    bot.channels.get("529076349374169098").send("Bienvenue à toi " + member + " qui viens de nous rejoindre sur le discord de NORTH-SENTINEL")
+    bot.channels.get("529076349374169098").send("Bienvenue à toi " + member + " qui viens de nous rejoindre sur le discord de la Triade, envois un message à un Leader ou Fondateur pour être validé et accéder au reste du discord !")
 })
 
 
+bot.on('message', message => {
+      if (message.channel.type === 'dm') return;
+        const trois = require("./commands/trois.js"); 
+        trois(message, prefix, bot)
+    })
 
 bot.on('message', message => {
 
