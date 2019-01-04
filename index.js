@@ -41,18 +41,29 @@ bot.on('message', message => {
     if (message.author.bot) return;
     if (message.channel.type === 'dm') return;
 
-    if (message.content.startsWith(prefix + 'cible')) {
+    if (message.content.startsWith(prefix + 'min')) {
 
-        var pointsgrepo = (message.content.slice(6, message.content.length));
+        var pointsgrepo = (message.content.slice(4, message.content.length));
         var min = pointsgrepo * 0.80
         var max = pointsgrepo * 1.20
         if (pointsgrepo <= 0) {
             message.delete()
         } else {
-            message.reply("La cible doit avoir entre " + min.toFixed() + " et " + max.toFixed() + " points pour être attaquée !")
+            message.reply("Le joueur doit avoir au minimum " + min.toFixed() + " points pour être attaqué ou attaquer ce joueur !")
         }
     }
+    
+    if (message.content.startsWith(prefix + 'max')) {
 
+        var pointsgrepo = (message.content.slice(4, message.content.length));
+        var min = pointsgrepo * 0.80
+        var max = pointsgrepo * 1.20
+        if (pointsgrepo <= 0) {
+            message.delete()
+        } else {
+            message.reply("Vous devez avoir au minimum " + min.toFixed() + " points pour être attaqué ou attaquer ce joueur !")
+        }
+    }
 
     let guild = message.member.guild;
     let Role = guild.roles.find(role => role.name === 'Mer 55');
@@ -88,7 +99,7 @@ bot.on('message', message => {
             var grepohelp = new Discord.RichEmbed()
         .setDescription("Voici la liste des commandes disponibles pour le bot NORTH-SENTINEL")
         .addField("Commandes de rôles","<45 Pour avoir le rôle Mer 45\n<55 Pour avoir le rôle Mer 55")
-        .addField("Grepolis","<cible + [Votre nombre de point] Permet de calculer automatiquement combien de points doivent avoir les cibles que vous voulez attaquer ou qui veulent vous attaquer !")
+        .addField("Grepolis","<max + [Nombre de points du joueur] Permet de calculer automatiquement combien de points vous devez avoir au minimum pour attaquer ou être attaqué par un joueur plus fort que vous.\n<min + [Votre nombre de point] Permet de calculer automatiquement le nombre de points minimum pour attaquer ou être attaqué par un joueur plus faible que vous.")
                 message.channel.sendEmbed(grepohelp);
             }
 })
