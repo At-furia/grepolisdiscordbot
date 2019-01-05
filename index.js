@@ -102,7 +102,7 @@ bot.on('message', message => {
         .setDescription("Voici la liste des commandes disponibles pour le bot NORTH-SENTINEL")
         .addField("Commandes de rôles","<45 Pour avoir le rôle Mer 45\n<55 Pour avoir le rôle Mer 55")
         .addField("Grepolis","<max + [Nombre de points du joueur] Permet de calculer automatiquement combien de points vous devez avoir au minimum pour attaquer ou être attaqué par un joueur plus fort que vous.\n<min + [Votre nombre de point] Permet de calculer automatiquement le nombre de points minimum pour attaquer ou être attaqué par un joueur plus faible que vous.")
-        .addField("Jeux","<devine Le bot tire entre 1 et 3 emojis, vous devez trouver le mot correspondant aux emojis.\n<3l Le bot tire 3 lettres aléatoire, vous devez faire une sorte de mini phrase, plus ou moins drôle."
+        .addField("Jeux","<devine Le bot tire entre 1 et 3 emojis, vous devez trouver le mot correspondant aux emojis.\n<3l Le bot tire 3 lettres aléatoire, vous devez faire une sorte de mini phrase, plus ou moins drôle.")
                   message.channel.sendEmbed(grepohelp);
             }
 })
