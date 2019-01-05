@@ -142,7 +142,7 @@ bot.on('message', message => {
 
         
      if (message.content == motdevine[4]||message.content == motdevine[5]) {
-        message.reply(`à trouvé le bon mot !`);
+        message.reply(`a trouvé le bon mot !`);
         db.get("devine").find("nombre").assign({
             nombre: motdevine[0] = "azertyuiop",
             partieetat: motdevine[1] = "attente",
