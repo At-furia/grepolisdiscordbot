@@ -1,0 +1,102 @@
+{
+"devine": [
+    {
+      "réponse 1": "Combattant à l'épée",
+      "réponse 2": "CE",
+      "emoji": ":crossed_swords: :shield:",
+      "stalk": "1"
+    },
+    {
+      "réponse 1": "Scierie",
+      "réponse 2": "Scierie",
+      "emoji": ":deciduous_tree: :hammer_pick:",
+      "stalk": "1"
+    },
+    {
+      "réponse 1": "Ferme",
+      "réponse 2": "Ferme",
+      "emoji": ":corn: :family_mwgb: :cow2: ",
+      "stalk": "1"
+    },
+    {
+      "réponse 1": "Mine d'argent",
+      "réponse 2": "Mine",
+      "emoji": ":pick: :gem: ",
+      "stalk": "1"
+    },
+    {
+      "réponse 1": "Temple",
+      "réponse 2": "Temple",
+      "emoji": ":pray:",
+      "stalk": "1"
+    },
+    {
+      "réponse 1": "Caserne",
+      "réponse 2": "Caserne",
+      "emoji": " :house: :crossed_swords: :shield:",
+      "stalk": "1"
+    },
+    {
+      "réponse 1": "Zeus",
+      "réponse 2": "Zeus",
+      "emoji": ":cloud_lightning: :zap:",
+      "stalk": "1"
+    },
+    {
+      "réponse 1": "Bateau-feu",
+      "réponse 2": "BF",
+      "emoji": ":speedboat: :fire: ",
+      "stalk": "1"
+    },
+    {
+      "réponse 1": "Académie",
+      "réponse 2": "Aca",
+      "emoji": ":bulb: :book: ",
+      "stalk": "1"
+    },
+    {
+      "réponse 1": "Marché",
+      "réponse 2": "Marché",
+      "emoji": " :inbox_tray: :scales: :outbox_tray:",
+      "stalk": "1"
+    },
+    {
+      "réponse 1": "Port",
+      "réponse 2": "Port",
+      "emoji": ":construction_site: :sailboat: ",
+      "stalk": "1"
+    },
+    {
+      "réponse 1": "Statue divine",
+      "réponse 2": "Statue",
+      "emoji": ":statue_of_liberty: ",
+      "stalk": "1"
+    },
+    {
+      "réponse 1": "Cavalier",
+      "réponse 2": "Char",
+      "emoji": ":horse_racing: :crossed_swords: ",
+      "stalk": "1"
+    },
+    {
+      "réponse 1": "Archer",
+      "réponse 2": "Archer",
+      "emoji": ":bow_and_arrow: ",
+      "stalk": "1"
+    },
+    {
+      "réponse 1": "PC",
+      "réponse 2": "Points de combat",
+      "emoji": ":military_medal: :crossed_swords:",
+      "stalk": "1"
+    },
+    {
+      "nombre": "azertyuiop",
+      "partieetat": "attente",
+      "essais": 1,
+      "essaisold": 1,
+      "rép1": "Mine",
+      "rép2": "Mine d'argent"
+    }
+  ]
+}
