@@ -10,7 +10,9 @@ const db = low(adapter);
 var prefix = "<"
 var bot = new Discord.Client();
 var randnum = 0;
+var devinee = db.get('devine').size().value();
 
+db.defaults({ devine:[] }).write()
 
 bot.on('ready', () => {
     bot.user.setPresence({ game: { name: 'Grepolis - <help', type: 1}})
@@ -100,6 +102,53 @@ bot.on('message', message => {
         .setDescription("Voici la liste des commandes disponibles pour le bot NORTH-SENTINEL")
         .addField("Commandes de rôles","<45 Pour avoir le rôle Mer 45\n<55 Pour avoir le rôle Mer 55")
         .addField("Grepolis","<max + [Nombre de points du joueur] Permet de calculer automatiquement combien de points vous devez avoir au minimum pour attaquer ou être attaqué par un joueur plus fort que vous.\n<min + [Votre nombre de point] Permet de calculer automatiquement le nombre de points minimum pour attaquer ou être attaqué par un joueur plus faible que vous.")
-                message.channel.sendEmbed(grepohelp);
+        .addField("Jeux","<devine Le bot tire entre 1 et 3 emojis, vous devez trouver le mot correspondant aux emojis.\n<3l Le bot tire 3 lettres aléatoire, vous devez faire une sorte de mini phrase, plus ou moins drôle."
+                  message.channel.sendEmbed(grepohelp);
             }
+})
+
+bot.on('message', message => {
+    
+    if (message.author.bot) return;
+     if (message.channel.type === 'dm') return;
+
+     var motdevinedb = db.get("devine").find('nombre').value()
+     var motdevine = Object.values(motdevinedb);
+     var motdevinerdb = db.get("devine").find('stalk').value()
+     var motdeviner = Object.values(motdevinerdb);
+
+     if (message.content === prefix + "devine"){   
+
+        if (motdevine[0] == "azertyuiop") {
+            rdmtete();
+
+     var trouve = db.get(`devine[${randnum}].emoji`).toString().value();
+     var trouver = db.get(`devine[${randnum}].réponse 1`).toString().value();
+     var trouvere = db.get(`devine[${randnum}].réponse 2`).toString().value();
+
+     message.channel.send(`${trouve}`)
+     db.get("devine").find({ partieetat: "attente" }).assign({ partieetat: motdevine[1] = "start", nombre: motdevine[0] = trouve, essaisold: motdevine[3] = 0,essais: motdevine[2] = 1,rép1: motdevine[4] = trouvere, rép2: motdevine[5] = trouver}).write();
+
+        } else {
+            message.reply(`Une devinette est déjà en cours ! (${motdevine[0]})`)
+        
+        }}
+        function rdmtete(min, max) {
+            min = Math.ceil(0);
+            max = Math.floor(devinee);
+            randnum = Math.floor(Math.random() * (max - min) + min);
+        }
+     if (motdevine[1] == "start") {
+
+        
+     if (message.content == motdevine[4]||message.content == motdevine[5]) {
+        message.reply(`à trouvé le bon mot !`);
+        db.get("devine").find("nombre").assign({
+            nombre: motdevine[0] = "azertyuiop",
+            partieetat: motdevine[1] = "attente",
+            essaisold: motdevine[3] = motdevine[2],
+
+        }).write();
+    }}
+
 })
